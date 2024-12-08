@@ -20,3 +20,15 @@ Here is the created Load Balancer:
 ![image](https://github.com/user-attachments/assets/5b7d00c9-6223-49b7-8310-94c3a381186e)
 
 
+## Task 3
+
+### Cloning the starter code
+
+Use Git clone command to clone the following repository into your machine:
+
+```
+https://git.sr.ht/~nathan_climbs/2420-as3-p2-start
+```
+
+
+
