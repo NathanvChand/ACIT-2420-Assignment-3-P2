@@ -1,7 +1,7 @@
 # ACIT-2420-Assignment-3-P2
 ACIT 2420 Assignment 3 part 2
 
-## This is a continuation of the Assignmemt 3 homework
+## This is a continuation of the Assignment 3 homework
 
 ---
 
