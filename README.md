@@ -42,5 +42,98 @@ https://git.sr.ht/~nathan_climbs/2420-as3-p2-start
 
 To do this I'll refer back to the part 1 assignment, and reuse the code I previously made.
 
+#### Creating a System User
+```
+sudo useradd -r -m -d /var/lib/webgen -s /usr/bin/nologin webge 
+```
+Move the cloned repo files to the webgen users directory.
+
+this is how I did it:
+
+```
+ sudo mv /home/arch/2420-as3-p2-start/generate_index /var/lib/webgen/bin
+ ```
+
+#### The File Structure
+Should look like this:
+```
+.
+├── bin/
+│ └── generate_index
+├── documents/
+│ ├── file-one
+│ └── file-two
+└── HTML/
+└── index.html
+```
+
+#### The .service file
+Here is my generate-index.service script:
+
+```
+[Unit]
+Description=Run the damn script
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=/var/lib/webgen/bin/generate_index
+User=webgen
+WorkingDirectory=/var/lib/webgen
+```
+
+#### The .timer file
+Here is my timer: 
+
+```
+[Unit]
+Description=Run the damn script at 5:00 every day
+
+[Timer]
+OnCalendar=*-*-* 5:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+```
+
+#### The nginx Configuration
+
+make a new file for your nginx config.
+
+Do this: 
+
+```
+sudo nvim /etc/nginx/websites/web-config
+````
+
+Open nigix config:
+
+```
+sudo nvim /etc/nginx/nginx.conf
+```
+
+then change the user to webgen and specify its home dir.
+
+Next make the server setup file:
+```
+sudo nvim /etc/nginx/websites/web-configs
+```
+
+set up the index.html to port 80
+
+```
+ server {
+        listen 80;
+        server_name "localhost"
+
+        root /var/lib/webgen/HTML
+        index index.html
+
+        location /static/ {
+                root /var/www/HTML;
+        }
+  }
+```
 ---
 
