@@ -9,4 +9,6 @@ ACIT 2420 Assignment 3 part 2
 
  Firstly, Ive craeted two new DigitalOcean droplets for this assignment. These two new droplets will be used for the load balancer.
 
+![image](https://github.com/user-attachments/assets/5ef764ec-74f5-45ec-9d6e-7e5ccb87a30f)
+
  
