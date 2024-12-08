@@ -16,7 +16,7 @@ Here they are:
 
 ### Creating the Load Balancer
 
-Here is the craeted Load Balancer:
+Here is the created Load Balancer:
 ![image](https://github.com/user-attachments/assets/5b7d00c9-6223-49b7-8310-94c3a381186e)
 
 
