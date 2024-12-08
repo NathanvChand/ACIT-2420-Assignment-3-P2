@@ -1,0 +1,9 @@
+[Unit]
+Description=Run the damn script at 5:00 every day
+
+[Timer]
+OnCalendar=*-*-* 5:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
