@@ -1,1 +1,9 @@
+[Unit]
+Description=Run the damn script
+After=network-online.target
 
+[Service]
+Type=simple
+ExecStart=/var/lib/webgen/bin/generate_index
+User=webgen
+WorkingDirectory=/var/lib/webgen
